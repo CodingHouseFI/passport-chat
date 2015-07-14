@@ -6,3 +6,10 @@ form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 
 #messages { list-style-type: none; margin: 0; padding: 0; }
 #messages li { padding: 5px 10px; }
 #messages li:nth-child(odd) { background: #eee; }
+div#count {
+  border: 1px solid #148111;
+  background-color: #90BE97;
+  float: right;
+  padding: 1em;
+  border-radius: 50%;
+}

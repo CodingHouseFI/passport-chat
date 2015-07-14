@@ -8,6 +8,7 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
   </head>
   <body>
+    <div id="count">42</div>
     {{{body}}}
     <script>
       var socket = io();
@@ -17,8 +18,11 @@
         return false;
       });
      socket.on('chat message', function(msg){
-        $('#messages').append($('<li>').text(msg));
+        $('#messages').prepend($('<li>').text(msg));
       });
+     socket.on("users count", function(count) {
+        $("#count").text(count);
+     });
     </script>
   </body>
 </html>
