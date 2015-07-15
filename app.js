@@ -29,6 +29,7 @@ app.use(cookieParser());
 app.use(session({ secret: 'revengeofthenerds' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
+require('./config/passport')(passport);
 require('./routes/passport.js')(app, passport);
 
 app.use(express.static(path.join(__dirname, 'public')));

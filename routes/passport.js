@@ -8,9 +8,19 @@ module.exports = function(app, passport) {
     res.render('login.hbs');
   });
 
+  app.post('/login', passport.authenticate('local-login', {
+    successRedirect : '/',
+    failureRedirect : '/login'
+  }));
+
   app.get('/signup', function(req, res) {
     res.render('signup.hbs');
   });
+
+  app.post('/signup', passport.authenticate('local-signup', {
+    successRedirect : '/',
+    failureRedirect : '/signup'
+  }));
 
   app.get('/logout', function(req, res) {
     req.logout();
